@@ -7,7 +7,7 @@ from const import SPORTS_API_URL
 
 def get_stats(start_idx=0):
     url = SPORTS_API_URL + \
-        "/leagues;league_keys=314.l.199215/players;start=%d/stats" % start_idx
+        "/leagues;league_keys=348.l.213994/players;start=%d/stats" % start_idx
     guid = oauthapp.token.yahoo_guid
     parameters = { 'format': 'json' }
     request = oauthlib.oauth.OAuthRequest.from_consumer_and_token(
@@ -24,7 +24,7 @@ def get_stats(start_idx=0):
 #  ========
 player_data = []
 
-for start_idx in range(0, 2775, 25):
+for start_idx in range(0, 2725, 25):
     print start_idx
     r = get_stats(start_idx)
     players = r['fantasy_content']['leagues']['0']['league'][1]['players']
@@ -42,10 +42,8 @@ for start_idx in range(0, 2775, 25):
                                 'position': position, 'points': points})
 
 print len(player_data)
-# for p in player_data:
-#     print p
 df = pd.DataFrame(player_data).set_index('player_key')
-df.to_csv('stats2013.csv')
+df.to_csv('stats2015.csv')
 
 # response['fantasy_content']['leagues']['0']['league'][1]['players']['0']['player'][0][0]['player_key']
 # response['fantasy_content']['leagues']['0']['league'][1]['players']['0']['player'][0][2]['name']['full']
