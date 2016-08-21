@@ -5,7 +5,8 @@ from auth import oauthapp
 from const import SPORTS_API_URL
 
 
-url = SPORTS_API_URL + "/league/331.l.515253/draftresults"
+# url = SPORTS_API_URL + "/league/331.l.515253/draftresults" # 2014
+url = SPORTS_API_URL + "/league/348.l.213994/draftresults" # 2015
 guid = oauthapp.token.yahoo_guid
 parameters = { 'format': 'json' }
 request = oauthlib.oauth.OAuthRequest.from_consumer_and_token(
