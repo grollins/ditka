@@ -13,3 +13,4 @@ yos-social-python
 + adjust loop length in stats.py based on previous step
 + run stats.py to get player stats
 + run plot.py to see cost vs. points
++ run rank_analysis.R to predict draft prices, based on previous year's data
